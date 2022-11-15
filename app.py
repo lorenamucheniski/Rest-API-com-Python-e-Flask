@@ -1,20 +1,18 @@
-from flask import Flask, jsonify, request
-import json
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-@app.route('/<int:id>')
-def pessoa(id):
-    return jsonify({'id': id, 'nome': 'Rafael', 'profissao': 'desenvolvedor'})
+desenvolvedores = [
+    {'Nome': 'Lorena',
+     'Habilidades': ['Python', 'Flask']
+     },
+    {'Nome': 'Diego',
+     'Habilidades': ['Python', 'Django']}
+]
 
-@app.route('/soma', methods = ['POST', 'GET'])
-def soma():
-    if request.method == 'POST':
-        dados = json.loads(request.data)
-        total = sum(dados['valores'])
-    elif request.method == 'GET':
-        total =  10 + 10
-    return jsonify({'soma':total})
+@app.route('/dev')
+def desenvolvedor():
+    return jsonify({'nome':'Lorena'})
 
 if __name__ == '__main__':
     app.run(debug = True)
