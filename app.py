@@ -44,6 +44,8 @@ def lista_desenvolvedores():
         dados['id'] = posicao
         desenvolvedores.append(dados)
         return jsonify(desenvolvedores[posicao])
+    elif request.method == 'GET':
+        return jsonify(desenvolvedores)
 
 
 if __name__ == '__main__':
