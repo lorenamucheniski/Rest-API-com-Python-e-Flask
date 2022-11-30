@@ -19,8 +19,6 @@ Elas também possuem uma camada maior de segurança, que busca prevenir possíve
 No nosso cotidiano já temos exemplos de APIs, especialmente em aplicativos populares. Um exemplo disso é o Google Maps e iFood. O iFood utiliza a API do Google Maps para gerar geolocalização e coordenadas das entregas dos pedidos.
 
 ## Biblioteca Request
-Essa é uma biblioteca que vai te permitir com que você faça uma requisição na API por exemplo. Primeiramente, para instalar a biblioteca requests basta escrever no terminal ou no prompt pip install requests.
+Essa é uma biblioteca que vai te permitir com que você faça uma requisição na API por exemplo. Primeiramente, para instalar a biblioteca requests basta escrever no terminal ou no prompt pip install requests. Como vamos tratar de uma API é possível que em algumas delas você não consiga deletar itens por exemplo, mas veremos quais os métodos Python que conseguimos utilizar com essa biblioteca.
 
-Como vamos tratar de uma API é possível que em algumas delas você não consiga deletar itens por exemplo, mas veremos quais os métodos Python que conseguimos utilizar com essa biblioteca.
-
-O primeiro método é o ****GET****.
+O primeiro método é o ****GET ****. Utilizamos esse método para poder coletar informções de uma API. 
