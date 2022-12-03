@@ -1,8 +1,8 @@
-from sqlalchemy import create_engine, Column, Integer, String
-from sqlalchemy.orm import scoped_session, sessionmaker
-from sqlalchemy.txt.declarative import declarative_base
+from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
+from sqlalchemy.orm import scoped_session, sessionmaker, relationship
+from sqlalchemy.ext.declarative import declarative_base
 
-engine = create_engine ('sqlite: ///atividades.db', convert_unicode = True)
+engine = create_engine('sqlite:///atividades.db', convert_unicode = True)
 db_session = scoped_session(sessionmaker(autocommit = False, binds = engine))
 
 Base = declarative_base()
@@ -21,4 +21,11 @@ class Atividades(Base):
     __tablename__ = 'atividades'
     id = Column(Integer, primary_key = True)
     nome = Column(String(80))
-    
+    pessoa_id = Column(Integer, ForeignKey('pessoas.id'))
+    pessoa = relationship ("Pessoas")
+
+def init_db():
+    Base.metadata.create_all(bind = engine )
+
+if __name__ == '__main__':
+    init_db()
